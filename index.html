@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Student Information Management System</title>
+</head>
+<body>
+    <main>
+        <h1>Student Information Management System</h1>
+        <div class="search-container">
+            <input type="search" placeholder="Search by name or ID..." id="search-bar">
+            <button id="add-btn">+ Add Student</button>
+        </div>
+        <table id="student-table">
+            <thead> 
+                <tr>
+                    <th>STUDENT ID</th>
+                    <th>FULL NAME</th>
+                    <th>AGE</th>
+                    <th>YEAR LEVEL</th>
+                    <th>COURSE</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+
+    <div class="add-student-container">
+        <div class="add-student-form">
+            
+            <form action="">
+                <h1 id="title"></h1>
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" placeholder="e.g. UA202502003">
+                <span class="error" id="idError">Please enter a valid Student Id*</span>
+
+                
+                <label for="studentFirstname">First Name:</label>
+                <input type="text" id="studentFirstname" placeholder="e.g. Juan ">
+                <span class="error" id="fNameError">asd</span>
+
+
+                <label for="studentLastname">Last Name:</label>
+                <input type="text" id="studentLastname" placeholder="e.g. Dela Cruz">
+                <span class="error" id="lNameError">asd</span>
+
+
+                <label for="studentAge">Age:</label>
+                <input type="number" id="studentAge" placeholder="e.g. 16" min="16">
+                <span class="error" id="ageError">asd</span>
+
+
+                <label for="year-lvl">Year Level:</label>
+                <select id="studentYear">
+                    <option value="" disabled selected>-- Select Year Level --</option>
+                    <option value="1st-year">1st-year</option>
+                    <option value="2nd-year">2nd-year</option>
+                    <option value="3rd-year">3rd-year</option>
+                    <option value="4th-year">4th-year</option>
+                </select>
+                <span class="error" id="yearError"></span>
+                
+
+                <label for="studentCourse">Course:</label>
+                <select id="studentCourse">
+                    <option value="" disabled selected>-- Select Course --</option>
+                    <option value="BSIT">BSIT</option>
+                    <option value="BSCS">BSCS</option>
+                    <option value="BSIS">BSIS</option>
+                    <option value="BSCE">BSCE</option>
+                </select>
+                <span class="error" id="courseError">asd</span>
+
+
+                <div class="button-container">
+                    <button class="form-btn" id="cancel-btn" type="button">Cancel</button>
+                    <button class="form-btn" id="submit-btn" type="button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="warningContainer" id="warning-container">
+        <div class="confirm-box">
+            <h1 id="warningTitle">Delete Student</h1>
+            <p>Are you sure you want to delete this student?</p>
+            <div class="warning-button-container">
+                <button type="button" class="warningBtns" id="warning-cancel-btn">Cancel</button>
+                <button type="button" class="warningBtns" id="warning-delete-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
