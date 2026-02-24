@@ -42,7 +42,7 @@ const tableBody = document.querySelector('#student-table tbody');
 function displayTable(students){
     tableBody.innerHTML = ''
 
-    if(student.length === 0 ){
+    if(students.length === 0 ){
         tableBody.innerHTML = `
          <tr>
             <td colspan="6" style="font-size: 1.5em; color: grey;">No students found.</td>
@@ -274,6 +274,7 @@ function clearForm() {
     inputYear.value   = '';
     inputCourse.value = '';
 }
+
 
 
 
