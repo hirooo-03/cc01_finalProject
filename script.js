@@ -190,11 +190,11 @@ submitBtn.addEventListener('click', function(){
 
 tableBody.addEventListener('click', function(event){
     const btn = event.target.closest('button');
-    if(!btn || !btn.classList.contains('edit-btn'))
-        return;
+    if(!btn || !btn.classList.contains('edit-btn')) return;
 
-    const index = parseInt(btn.dataset.index);
-    const student = students[index]
+    const id = btn.dataset.id;
+    const index = students.findIndex(s => s.id === id);
+    const student = students[index];
     const [firstName, ...rest] = student.name.split(' ');
 
     inputId.value     = student.id;
@@ -208,8 +208,7 @@ tableBody.addEventListener('click', function(event){
     clearAllError();
     container.classList.add('active');
     editTitle.textContent = 'Edit Student';
-    
-})
+});
 
 const warningContainer = document.getElementById('warning-container');
 const warningDeleteBtn = document.getElementById('warning-delete-btn');
@@ -217,15 +216,17 @@ const warningCancelBtn = document.getElementById('warning-cancel-btn');
 
 let deleteIndex = null;
 
-tableBody.addEventListener('click', function (e) {
+
+tableBody.addEventListener('click', function(e) {
     const btn = e.target.closest('button');
     if (!btn || !btn.classList.contains('delete-btn')) return;
 
-    deleteIndex = parseInt(btn.dataset.index);
+    const id = btn.dataset.id;
+    deleteIndex = students.findIndex(s => s.id === id);
     warningContainer.classList.add('active');
 });
 
-warningDeleteBtn.addEventListener('click', function () {
+warningDeleteBtn.addEventListener('click', function() {
     if (deleteIndex !== null) {
         students.splice(deleteIndex, 1);
         displayTable(students);
@@ -234,11 +235,10 @@ warningDeleteBtn.addEventListener('click', function () {
     warningContainer.classList.remove('active');
 });
 
-warningCancelBtn.addEventListener('click', function () {
+warningCancelBtn.addEventListener('click', function() {
     deleteIndex = null;
     warningContainer.classList.remove('active');
 });
-
 
 const searchBar = document.getElementById('search-bar');
 
@@ -252,19 +252,17 @@ function searchStudent() {
 
     const filtered = students.filter(function(s){
         return s.name.toUpperCase().includes(search) ||
-        s.id.toUpperCase().includes(search)
+               s.id.toUpperCase().includes(search);
     });
 
     displayTable(filtered);
 }
 
-
-searchBar.addEventListener('keydown', function (event) {
+searchBar.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') searchStudent();
 });
 
 searchBar.addEventListener('input', searchStudent);
-
 
 function clearForm() {
     inputId.value     = '';
@@ -274,9 +272,6 @@ function clearForm() {
     inputYear.value   = '';
     inputCourse.value = '';
 }
-
-
-
 
 
 
