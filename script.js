@@ -160,6 +160,15 @@ submitBtn.addEventListener('click', function(){
     const fullName = `${firstName} ${lastName}`;
 
     if(editingRow !== null){
+        const duplicate = students.some(function(s, i){
+            return s.id === id && i !== editingRow;
+        });
+
+        if(duplicate){
+            showError(inputId, idError, `<i>Student ID "${id}" already exists.</i>`);
+            return;
+        }
+
         students[editingRow] = { id, name: fullName, age, year: yearLvl, course };
         editingRow = null;
     } else {
