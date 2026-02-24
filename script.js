@@ -121,7 +121,7 @@ submitBtn.addEventListener('click', function(){
     if(!id){
         showError(inputId, idError, '<i>Please enter a valid Student Id.</i>');
         hasError = true;
-    } else if(!id.startsWith('UA2025')){
+    } else if(!id.startsWith('UA')){
         showError(inputId, idError, '<i>Please enter a valid Student Id (e.g. UA202502003 must be 11 characters).</i>');
         hasError = true;
     } else if(id.length !== 11){
@@ -272,3 +272,4 @@ function clearForm() {
     inputYear.value   = '';
     inputCourse.value = '';
 }
+
