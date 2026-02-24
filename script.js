@@ -109,7 +109,6 @@ inputCourse.addEventListener('change', function() {
 let editingRow = null;
 
 submitBtn.addEventListener('click', function(){
-
     const id = inputId.value.trim().toUpperCase();
     const firstName = inputFirst.value.trim().toUpperCase();
     const lastName = inputLast.value.trim().toUpperCase();
