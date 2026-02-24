@@ -200,24 +200,24 @@ form{
 }
 
 .edit-btn {
-    background-color: #4CAF50;
+    background-color: #00A9FF;
     margin-right: 5px;
 }
 
 .edit-btn:hover {
-    background-color: #66bb6a;
+    background-color: #00A9FF;
     transform: scale(1.05);
-    box-shadow: 0 0 15px 0px #4CAF50;
+    box-shadow: 0 0 15px 0px #4cc3ff;
 }
 
 .delete-btn {
-    background-color: #f44336;
+    background-color: #00A9FF;
 }
 
 .delete-btn:hover {
-    background-color: #ef5350;
+    background-color: #00A9FF;
     transform: scale(1.05);
-    box-shadow: 0 0 15px 0px #f44336;
+    box-shadow: 0 0 15px 0px #4cc3ff;
 }
 
 /*warning delete*/
