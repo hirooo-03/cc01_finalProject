@@ -39,7 +39,7 @@ let students = []
 
 const tableBody = document.querySelector('#student-table tbody');
 
-function displayTable(student){
+function displayTable(students){
     tableBody.innerHTML = ''
 
     if(student.length === 0 ){
@@ -274,6 +274,7 @@ function clearForm() {
     inputYear.value   = '';
     inputCourse.value = '';
 }
+
 
 
 
